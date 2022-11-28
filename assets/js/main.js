@@ -1,20 +1,22 @@
+
+
 function convertPokemonToli(pokemon){
 
     return `
         <li class="pokemon">
-            <span class="number">#001</span>
+            <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
             <div class="detail">
                 <ol class="types">
-                    <li class="type">poison</li>
-                    <li class="type">grass</li>
+                    ${pokemon.types.map((type) => `<li class="type">${type}</li>`).join('')}
                 </ol>
 
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="${pokemon.name}">
+                <img src="${pokemon.photo}" alt="${pokemon.name}">
 
             </div>
         </li>
-        `
+
+    `
 }
 
 // criando requisições http com js
@@ -22,6 +24,7 @@ const pokemonList = document.getElementById('pokemonList');
 
 pokeApi.getPokemons().then((pokemons = []) => {
 
-    pokemonList.innerHTML += pokemons.map(convertPokemonToli).join('');
+    const newlist = pokemons.map(convertPokemonToli).join('');
+    pokemonList.innerHTML += newlist;
 })
 
