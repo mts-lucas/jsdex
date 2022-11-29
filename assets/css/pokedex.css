@@ -180,6 +180,17 @@
     height: 85px;
 }
 
+.pokemon .detail img:hover,
+.pokemon .detail img:focus {
+
+    transform: scale(1.2);
+}
+
+.pokemon .detail img {
+
+   transition: transform 0.5s;
+}
+
 .pagination {
 
     display: flex;
