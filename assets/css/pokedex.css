@@ -1,3 +1,21 @@
+.cabecalho{
+
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    margin: 0;
+    border: 10px double red ;
+    /* border-style: groove; */
+    border-radius: 1rem;
+    background-color: black;
+}
+
+.cabecalho .titulo{
+
+    text-align: center;
+    color: white;
+}
+
 .pokemons{
     display: grid;
     grid-template-columns: 1fr;

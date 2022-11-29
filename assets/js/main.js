@@ -4,7 +4,7 @@ const pokemonList = document.getElementById('pokemonList');
 const loadMoreButton = document.getElementById('loadMoreButton');
 
 const maxRecords = 151
-const limit = 10
+const limit = 12
 let offset = 0;
 
 function convertPokemonToli(pokemon){
@@ -32,12 +32,6 @@ function loadPokemonItens(offset, limit) {
         pokemonList.innerHTML += newHtml
     })
 }
-
-// pokeApi.getPokemons().then((pokemons = []) => {
-
-//     const newlist = pokemons.map(convertPokemonToli).join('');
-//     pokemonList.innerHTML += newlist;
-// })
 
 loadPokemonItens(offset, limit)
 
